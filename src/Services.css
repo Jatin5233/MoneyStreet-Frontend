@@ -1,0 +1,22 @@
+/* Add to your stylesheet */
+.hover-shadow {
+  transition: all 0.3s ease;
+}
+
+.hover-shadow:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+}
+
+.transition-all {
+  transition: all 0.3s ease;
+}
+.button{
+  color: #45974e;
+  border-color: #45974e;
+  
+}
+.button:hover{
+  background-color: #45974e !important;
+  color: white !important;
+}

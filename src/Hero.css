@@ -1,0 +1,76 @@
+/* Custom styles for MoneyStreet */
+.navbar-custom {
+  background-color: #45974e;
+  padding: 15px 0;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+}
+
+.navbar-custom .navbar-nav .nav-link {
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+}
+
+.navbar-custom .navbar-nav .nav-link:hover {
+  color: #e0e0e0;
+}
+
+.hero-section {
+  padding: 80px 0;
+}
+
+.icon-box {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(69, 151, 78, 0.1);
+  border-radius: 50%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 50px 0;
+    text-align: center;
+  }
+  
+  .navbar-custom {
+    padding: 10px 0;
+  }
+}
+/* Custom styles for Products dropdown */
+.navbar-custom .nav-link,
+.navbar-custom .navbar-nav .nav-link {
+  color: white !important;
+}
+
+.navbar-custom .dropdown-menu {
+  background-color: #3a7d44; /* Slightly darker green */
+  border: none;
+  border-radius: 0 0 8px 8px;
+}
+
+.navbar-custom .dropdown-item {
+  color: white !important;
+  padding: 0.5rem 1rem;
+}
+
+.navbar-custom .dropdown-item:hover {
+  background-color: #45974e;
+}
+
+.navbar-custom .dropdown-divider {
+  border-color: rgba(255,255,255,0.1);
+}
+
+/* Make the dropdown title match other nav items */
+.navbar-custom .dropdown-toggle {
+  color: white !important;
+}
