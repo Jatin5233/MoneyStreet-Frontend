@@ -28,7 +28,7 @@ const { isAuthenticated ,setIsAuthenticated,loading} = useContext(AuthContext);
 
   const handleLogout = async () => {
     try {
-      const res = await axios.post(`${process.env.REACT_BASE_URL}/users/logout`, {}, {
+      const res = await axios.post(`${import.meta.env.VITE_BASE_URL}/users/logout`, {}, {
         withCredentials: true,
       });
       console.log(res.data.message); // Logged out successfully
