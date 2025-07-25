@@ -6,6 +6,7 @@ import { Container, Navbar, Nav, Button, Row, Col, Card,NavDropdown } from 'reac
 import {  Routes, Route, Link ,useNavigate} from 'react-router-dom';
 import "./Hero.css"
 import axios from 'axios';
+axios.defaults.withCredentials = true;
 
 // Import your page components (you'll need to create these)
 import Home from './Home';

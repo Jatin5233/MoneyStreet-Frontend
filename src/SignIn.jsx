@@ -5,6 +5,7 @@ import { Container, Form, Button, Alert, Spinner, Row, Col, Card } from 'react-b
 import { Link, useNavigate } from 'react-router-dom';
 
 import axios from 'axios';
+axios.defaults.withCredentials = true;
 
 const SignInPage = () => {
   const [formData, setFormData] = useState({
@@ -90,7 +91,7 @@ const verifyOtp = async () => {
     e.preventDefault();
     setApiError('');
     setSuccessMessage('');
-    
+
      if (!isOtpVerified) {
     alert("Please verify your OTP before proceeding.");
     return;
@@ -117,7 +118,7 @@ const verifyOtp = async () => {
         headers: {
           'Content-Type': 'application/json'
         }
-      });
+      },{withCredentials: true});
       console.log(response.data.success)
       if (response.data.user) {
         setSuccessMessage(response.data.message ||'Account created successfully!');
