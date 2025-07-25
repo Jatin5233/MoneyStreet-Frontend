@@ -51,7 +51,7 @@ const [isOtpVerified, setIsOtpVerified] = useState(false);
 const sendOtp = async () => {
   try {
     const response = await axios.post(`${import.meta.env.VITE_BASE_URL}/users/sendOtp`, {
-      phone: formData.phoneNumber,
+      phoneNo: formData.phoneNumber,
     });
     if (response.data.success) {
       setOtpSent(true);
@@ -64,7 +64,7 @@ const sendOtp = async () => {
 const verifyOtp = async () => {
   try {
     const response = await axios.post(`${import.meta.env.VITE_BASE_URL}/users/verifyOtp`, {
-      phone: formData.phoneNumber,
+      phoneNo: formData.phoneNumber,
       otp,
     });
     if (response.data.success) {
@@ -90,6 +90,11 @@ const verifyOtp = async () => {
     e.preventDefault();
     setApiError('');
     setSuccessMessage('');
+    
+     if (!isOtpVerified) {
+    alert("Please verify your OTP before proceeding.");
+    return;
+  }
 
     // Validate all fields before submission
     Object.keys(formData).forEach(field => {
