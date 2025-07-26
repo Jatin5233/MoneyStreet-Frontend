@@ -1,13 +1,16 @@
 
 
-import React, { useState,useEffect } from 'react';
+import React, { useState,useEffect,useContext } from 'react';
 import { Container, Form, Button, Alert, Spinner, Row, Col, Card } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 
 import axios from 'axios';
 axios.defaults.withCredentials = true;
 
+
+
 const SignInPage = () => {
+  const { checkAuthStatus } = useContext(AuthContext);
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -121,8 +124,10 @@ const verifyOtp = async () => {
         withCredentials: true
       });
       console.log(response.data.success)
+      
       if (response.data.user) {
         setSuccessMessage(response.data.message ||'Account created successfully!');
+        await checkAuthStatus();
         setTimeout(() => {
           navigate('/'); // Redirect to home page after 2 seconds
         }, 2000);

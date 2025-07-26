@@ -8,21 +8,27 @@ export function AuthProvider({ children }) {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    axios.get(`${import.meta.env.VITE_BASE_URL}/users/check-auth`, {
-      withCredentials: true
-    }).then(res => {
-        console.log(res.data)
+  const checkAuthStatus = async () => {
+    try {
+      const res = await axios.get(`${import.meta.env.VITE_BASE_URL}/users/check-auth`, {
+        withCredentials: true
+      });
       setIsAuthenticated(res.data.loggedIn);
-    }).finally(() => {
+    } catch (error) {
+      setIsAuthenticated(false);
+    } finally {
       setLoading(false);
-    });
+    }
+  };
+
+  useEffect(() => {
+    checkAuthStatus();
   }, []);
-  
 
   return (
-    <AuthContext.Provider value={{ isAuthenticated, setIsAuthenticated, loading }}>
+    <AuthContext.Provider value={{ isAuthenticated, setIsAuthenticated, loading, checkAuthStatus }}>
       {children}
     </AuthContext.Provider>
   );
 }
+
