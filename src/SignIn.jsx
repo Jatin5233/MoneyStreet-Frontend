@@ -117,8 +117,9 @@ const verifyOtp = async () => {
       }, {
         headers: {
           'Content-Type': 'application/json'
-        }
-      },{withCredentials: true});
+        },
+        withCredentials: true
+      });
       console.log(response.data.success)
       if (response.data.user) {
         setSuccessMessage(response.data.message ||'Account created successfully!');
