@@ -21,6 +21,8 @@ import LoanEligibilityCalculator from './LoanEligibilty';
 import GetStarted from './GetStarted';
 import SignInPage from './SignIn';
 import LoginPage from './Login';
+import ProfilePage from './Profile';
+
 import { AuthContext } from './AuthContext';
 
 const Hero = () => {
@@ -88,7 +90,7 @@ const { isAuthenticated ,setIsAuthenticated,loading} = useContext(AuthContext);
               
             </NavDropdown>
             
-            <Nav.Link as={Link} to={isAuthenticated?"/contact":"/login"} className="text-white">Contact</Nav.Link>
+            <Nav.Link as={Link} to={isAuthenticated?"/profile":"/login"} className="text-white">Contact</Nav.Link>
               </Nav>
               {!isAuthenticated &&!loading? (
   <div className="ml-4">
@@ -120,6 +122,7 @@ const { isAuthenticated ,setIsAuthenticated,loading} = useContext(AuthContext);
             <Route path="/contact" element={<Contact />} />
             <Route path="/signIn" element={<SignInPage/>} />
             <Route path="/login" element={<LoginPage/>} />
+            <Route path="/profile" element={<ProfilePage/>} />
         
           </Routes>
         </Container>
