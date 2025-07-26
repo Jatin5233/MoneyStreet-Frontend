@@ -92,10 +92,10 @@ const verifyOtp = async () => {
     setApiError('');
     setSuccessMessage('');
 
-     if (!isOtpVerified) {
-    alert("Please verify your OTP before proceeding.");
-    return;
-  }
+  //    if (!isOtpVerified) {
+  //   alert("Please verify your OTP before proceeding.");
+  //   return;
+  // }
 
     // Validate all fields before submission
     Object.keys(formData).forEach(field => {
