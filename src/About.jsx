@@ -93,6 +93,7 @@ const About = () => {
                 to="/get-started" 
                 variant="outline-primary" 
                 style={{ color: '#45974e', borderColor: '#45974e' }}
+                className='button'
               >
                 Explore Services
               </Button>
@@ -118,6 +119,7 @@ const About = () => {
           <Button 
             variant="success" 
             size="lg"
+            to="/get-started"
             style={{ backgroundColor: '#45974e', borderColor: '#45974e' }}
           >
             Start Your Journey Today
