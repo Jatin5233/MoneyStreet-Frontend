@@ -83,7 +83,7 @@ const LoginPage = () => {
                 <img 
                   src="/logo.png" 
                   alt="MoneyStreet" 
-                  width="120" 
+                  width="190" 
                   className="mb-3"
                 />
                 <h2 style={{ color: '#45974e' }}>Welcome Back</h2>
