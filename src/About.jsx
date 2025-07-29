@@ -117,6 +117,7 @@ const About = () => {
             Thousands trust MoneyStreet to guide them toward better financial health — one step at a time.
           </p>
           <Button 
+            as={Link}
             variant="success" 
             size="lg"
             to="/get-started"
