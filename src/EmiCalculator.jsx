@@ -80,7 +80,7 @@ const EMICalculator = () => {
                 <Form.Group className="mb-4">
                   <Form.Label>Loan Amount (₹)</Form.Label>
                   <Form.Control 
-                    type="range" 
+                    type="number" 
                     min="50000" 
                     max="50000000" 
                     step="10000"
@@ -97,7 +97,7 @@ const EMICalculator = () => {
                 <Form.Group className="mb-4">
                   <Form.Label>Interest Rate (% p.a.)</Form.Label>
                   <Form.Control 
-                    type="range" 
+                    type="number" 
                     min="5" 
                     max="25" 
                     step="0.1"
@@ -114,7 +114,7 @@ const EMICalculator = () => {
                 <Form.Group className="mb-4">
                   <Form.Label>Loan Tenure (years)</Form.Label>
                   <Form.Control 
-                    type="range" 
+                    type="number" 
                     min="1" 
                     max="30" 
                     value={loanTenure}
