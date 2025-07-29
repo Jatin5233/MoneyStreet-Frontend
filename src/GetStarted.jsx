@@ -1,9 +1,11 @@
-import React from 'react';
+import React ,{useContext} from 'react';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import "./GetStarted.css"
+import { AuthContext } from './AuthContext';
 
 const GetStarted = () => {
+  const { isAuthenticated} = useContext(AuthContext);
   const services = [
     {
       id: 1,
@@ -96,7 +98,7 @@ const GetStarted = () => {
             <p className="mb-4">Our financial experts can guide you to the right solution</p>
             <Button 
               as={Link} 
-              to="/contact" 
+              to={isAuthenticated?"/contact":"/login"}
               size="lg"
               style={{ backgroundColor: '#45974e', borderColor: '#45974e' }}
             >

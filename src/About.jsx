@@ -1,8 +1,10 @@
-import React from 'react';
+import React,{useContext} from 'react';
 import { Container, Row, Col, Button, Badge } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { AuthContext } from './AuthContext';
 
 const About = () => {
+  const { isAuthenticated} = useContext(AuthContext);
   return (
     <Container className="py-5">
       {/* Section Header */}
@@ -88,7 +90,7 @@ const About = () => {
             <div className="d-flex flex-wrap gap-3 mt-4">
               <Button 
                 as={Link} 
-                to="/services" 
+                to="/get-started" 
                 variant="outline-primary" 
                 style={{ color: '#45974e', borderColor: '#45974e' }}
               >
@@ -96,7 +98,7 @@ const About = () => {
               </Button>
               <Button 
                 as={Link} 
-                to="/contact" 
+                to={isAuthenticated?"/contact":"/login"}
                 style={{ backgroundColor: '#45974e', borderColor: '#45974e' }}
               >
                 Get Personalized Advice

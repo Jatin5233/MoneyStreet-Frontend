@@ -51,7 +51,7 @@ const { isAuthenticated ,setIsAuthenticated,loading} = useContext(AuthContext);
           <Container>
             <Navbar.Brand as={Link} to="/" className="d-flex align-items-center">
               <img
-                src="/fin4.png"
+                src="/logo.png"
                 width="50"
                 height="50"
                 className="d-inline-block align-top me-2"
